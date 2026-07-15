@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <link rel="redirect_uri" href="https://joergensen70.github.io/odin-dashboard/oauth/callback">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Odin Dashboard · App-Identität</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --canvas: #0a0d0f;
+      --panel: #12181b;
+      --line: #314044;
+      --text: #eef3ef;
+      --muted: #9aabaa;
+      --signal: #d5a23d;
+      --ok: #69b890;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 1px, transparent 1px 22px),
+        radial-gradient(circle at 70% 18%, #1c292e 0, var(--canvas) 52%);
+      color: var(--text);
+      font-family: "Bahnschrift", "DIN Alternate", sans-serif;
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 780px;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      border: 1px solid var(--line);
+      background: rgba(18, 24, 27, .96);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, .48);
+    }
+
+    .mark {
+      display: grid;
+      align-content: start;
+      justify-content: center;
+      border-right: 1px solid var(--line);
+      padding-top: 32px;
+      color: var(--signal);
+      font: 700 30px/1 "Rockwell", serif;
+    }
+
+    .content { min-width: 0; padding: clamp(30px, 7vw, 68px); }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--signal);
+      font: 600 12px/1.4 "Cascadia Mono", monospace;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Rockwell", "Roboto Slab", serif;
+      font-size: clamp(42px, 8vw, 72px);
+      font-weight: 500;
+      line-height: .95;
+      letter-spacing: -.045em;
+      overflow-wrap: anywhere;
+    }
+
+    .intro {
+      max-width: 56ch;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 12px 24px;
+      margin: 42px 0 0;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      font: 13px/1.55 "Cascadia Mono", monospace;
+      min-width: 0;
+    }
+
+    dt { color: var(--muted); }
+    dd { margin: 0; overflow-wrap: anywhere; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 34px;
+      color: var(--ok);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .status::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+      box-shadow: 0 0 0 5px rgba(105, 184, 144, .1);
+    }
+
+    @media (max-width: 560px) {
+      main { grid-template-columns: 1fr; }
+      .mark { display: none; }
+      dl { grid-template-columns: 1fr; gap: 4px; }
+      dd + dt { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <aside class="mark" aria-hidden="true">O</aside>
+    <section class="content">
+      <p class="eyebrow">Home Assistant OAuth client</p>
+      <h1>Odin Dashboard</h1>
+      <p class="intro">
+        Native Android-Oberfläche für den fest eingebauten Camper-Bildschirm.
+        Home Assistant bleibt Identitäts-, Rechte- und Datenquelle.
+      </p>
+      <dl>
+        <dt>Android-Paket</dt>
+        <dd>de.joergensen.odindashboard</dd>
+        <dt>OAuth-Callback</dt>
+        <dd>https://joergensen70.github.io/odin-dashboard/oauth/callback</dd>
+        <dt>Datenschutz</dt>
+        <dd>Keine Analyse, Cookies, Konten oder serverseitige Datenspeicherung</dd>
+      </dl>
+      <div class="status">Öffentliche App-Identität</div>
+    </section>
+  </main>
+</body>
+</html>

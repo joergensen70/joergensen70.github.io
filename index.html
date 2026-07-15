@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Jörg Engelsen · App-Identitäten</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --canvas: #0b0e10;
+      --panel: #11171a;
+      --line: #2b383c;
+      --text: #edf2ef;
+      --muted: #98a8a7;
+      --signal: #d6a542;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background:
+        linear-gradient(90deg, transparent 49.8%, rgba(214, 165, 66, .06) 50%, transparent 50.2%),
+        radial-gradient(circle at 50% 24%, #182126 0, var(--canvas) 48%);
+      color: var(--text);
+      font-family: "Bahnschrift", "DIN Alternate", sans-serif;
+    }
+
+    main {
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--signal);
+      background: rgba(17, 23, 26, .94);
+      padding: clamp(28px, 7vw, 64px);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, .42);
+    }
+
+    .eyebrow {
+      margin: 0 0 28px;
+      color: var(--signal);
+      font: 600 12px/1.4 "Cascadia Mono", monospace;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Rockwell", "Roboto Slab", serif;
+      font-size: clamp(40px, 9vw, 76px);
+      font-weight: 500;
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    p {
+      max-width: 58ch;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      border-bottom: 1px solid var(--signal);
+      padding: 0 0 8px;
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a::after { content: "↗"; color: var(--signal); }
+    a:focus-visible { outline: 3px solid var(--signal); outline-offset: 8px; }
+
+    footer {
+      margin-top: 56px;
+      color: #667579;
+      font: 12px/1.5 "Cascadia Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Public application identity</p>
+    <h1>Vertrauen braucht einen festen Ort.</h1>
+    <p>
+      Diese Domain veröffentlicht ausschließlich überprüfbare Identitätsdaten
+      für private Android-Anwendungen. Sie enthält keine Benutzerkonten,
+      Zugangsdaten, Telemetrie oder Home-Assistant-Adressen.
+    </p>
+    <a href="/odin-dashboard/">Odin Dashboard ansehen</a>
+    <footer>joergensen70.github.io · statisch · ohne Tracking</footer>
+  </main>
+</body>
+</html>

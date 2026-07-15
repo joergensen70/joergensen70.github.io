@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "de.joergensen.odindashboard",
+      "sha256_cert_fingerprints": [
+        "ED:03:58:4E:30:2C:0A:E4:ED:CA:B1:46:F4:75:3A:4A:B7:6E:2C:23:B8:E4:11:60:3D:75:A0:ED:5D:B8:CE:6C",
+        "C6:D0:F5:5C:37:54:3F:47:EE:4F:54:0C:64:9F:2F:F8:24:80:F0:39:5D:65:F9:30:8B:C0:1B:FA:7C:9E:FF:6E"
+      ]
+    }
+  }
+]
