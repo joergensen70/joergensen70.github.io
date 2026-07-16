@@ -11,6 +11,9 @@ Public application identity for private Android applications.
 
 The site is static and contains no Home Assistant instance URL, credential,
 authorization code, analytics, cookies or external asset dependency.
+The OAuth callback page forwards its current URL directly to the Android
+package and provides a manual app-open button for browsers that suppress
+automatic Android App Link handoff.
 
 The Digital Asset Links file currently contains the local debug certificate
 and the direct release/upload certificate. Add the Google Play App Signing

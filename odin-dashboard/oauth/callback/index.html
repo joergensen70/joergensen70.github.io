@@ -40,6 +40,23 @@
       line-height: 1;
     }
     p { margin: 24px 0 0; color: #9aabaa; font-size: 17px; line-height: 1.6; }
+    a {
+      display: inline-flex;
+      min-height: 52px;
+      margin-top: 28px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid #d5a23d;
+      background: #d5a23d;
+      color: #0a0d0f;
+      font: 600 16px/1 "Bahnschrift", "DIN Alternate", sans-serif;
+      text-decoration: none;
+    }
+    a:focus-visible {
+      outline: 3px solid #eef3ef;
+      outline-offset: 4px;
+    }
   </style>
 </head>
 <body>
@@ -47,11 +64,28 @@
     <p class="label">OAuth-Rückkehr</p>
     <h1>Zurück zu Odin Dashboard</h1>
     <p>
-      Öffne Odin Dashboard erneut. Wenn diese Seite nach einer Anmeldung
-      sichtbar bleibt, ist der Android App Link auf diesem Gerät noch nicht
-      verifiziert. Starte die Anmeldung nicht mehrfach und teile die Adresse
+      Die Anmeldung ist abgeschlossen. Odin Dashboard sollte sich automatisch
+      öffnen. Falls Samsung Internet diese Seite anzeigt, öffne die App mit
+      diesem Knopf. Starte die Anmeldung nicht erneut und teile die Adresse
       dieser Seite nicht.
     </p>
+    <a id="open-app" href="#" rel="nofollow">Odin Dashboard öffnen</a>
   </main>
+  <script>
+    (() => {
+      const packageName = "de.joergensen.odindashboard";
+      const target =
+        `intent://${window.location.host}${window.location.pathname}${window.location.search}` +
+        `#Intent;scheme=https;package=${packageName};` +
+        "action=android.intent.action.VIEW;" +
+        "category=android.intent.category.BROWSABLE;end";
+      const openApp = document.getElementById("open-app");
+      openApp.href = target;
+
+      window.setTimeout(() => {
+        window.location.href = target;
+      }, 250);
+    })();
+  </script>
 </body>
 </html>
