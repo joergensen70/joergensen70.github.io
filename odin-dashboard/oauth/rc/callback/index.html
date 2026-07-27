@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Odin Dashboard RC · Anmeldung</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #0a0d0f;
+      color: #eef3ef;
+      font-family: "Bahnschrift", "DIN Alternate", sans-serif;
+    }
+    main {
+      width: min(620px, 100%);
+      border-left: 4px solid #4db3ff;
+      background: #12181b;
+      padding: clamp(28px, 8vw, 64px);
+    }
+    .label {
+      margin: 0 0 18px;
+      color: #4db3ff;
+      font: 600 12px/1.4 "Cascadia Mono", monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font: 500 clamp(38px, 9vw, 64px)/1 "Rockwell", serif; }
+    p { margin: 24px 0 0; color: #9aabaa; font-size: 17px; line-height: 1.6; }
+    a {
+      display: inline-flex;
+      min-height: 52px;
+      margin-top: 28px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid #4db3ff;
+      background: #4db3ff;
+      color: #0a0d0f;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">OAuth-Rückkehr · RC</p>
+    <h1>Zurück zur Test-App</h1>
+    <p>
+      Die Anmeldung ist abgeschlossen. Odin Dashboard RC sollte sich
+      automatisch öffnen. Falls der Browser geöffnet bleibt, verwende den
+      folgenden Knopf.
+    </p>
+    <a id="open-app" href="#" rel="nofollow">Odin Dashboard RC öffnen</a>
+  </main>
+  <script>
+    (() => {
+      const packageName = "de.joergensen.odindashboard.rc";
+      const target =
+        `intent://${window.location.host}${window.location.pathname}${window.location.search}` +
+        `#Intent;scheme=https;package=${packageName};` +
+        "action=android.intent.action.VIEW;" +
+        "category=android.intent.category.BROWSABLE;end";
+      const openApp = document.getElementById("open-app");
+      openApp.href = target;
+      window.setTimeout(() => { window.location.href = target; }, 250);
+    })();
+  </script>
+</body>
+</html>

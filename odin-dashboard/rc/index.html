@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <link rel="redirect_uri" href="https://joergensen70.github.io/odin-dashboard/oauth/rc/callback">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Odin Dashboard RC · App-Identität</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --canvas: #0a0d0f;
+      --panel: #12181b;
+      --line: #314044;
+      --text: #eef3ef;
+      --muted: #9aabaa;
+      --signal: #4db3ff;
+      --ok: #69b890;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--canvas);
+      color: var(--text);
+      font-family: "Bahnschrift", "DIN Alternate", sans-serif;
+    }
+    main {
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--signal);
+      background: var(--panel);
+      padding: clamp(30px, 8vw, 68px);
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--signal);
+      font: 600 12px/1.4 "Cascadia Mono", monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font: 500 clamp(40px, 8vw, 68px)/1 "Rockwell", serif; }
+    p { max-width: 58ch; margin: 26px 0 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
+    dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 10px 22px;
+      margin: 36px 0 0;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      font: 13px/1.5 "Cascadia Mono", monospace;
+    }
+    dt { color: var(--muted); }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    .status { margin-top: 30px; color: var(--ok); font-weight: 600; }
+    @media (max-width: 560px) {
+      dl { grid-template-columns: 1fr; gap: 4px; }
+      dd + dt { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Home Assistant OAuth · Release Candidate</p>
+    <h1>Odin Dashboard RC</h1>
+    <p>
+      Isolierte Test-Identität der nativen Odin-App. Home Assistant bleibt
+      Identitäts-, Rechte- und Datenquelle.
+    </p>
+    <dl>
+      <dt>Android-Paket</dt>
+      <dd>de.joergensen.odindashboard.rc</dd>
+      <dt>OAuth-Callback</dt>
+      <dd>https://joergensen70.github.io/odin-dashboard/oauth/rc/callback</dd>
+      <dt>Datenschutz</dt>
+      <dd>Keine Analyse, Cookies, Konten oder serverseitige Datenspeicherung</dd>
+    </dl>
+    <div class="status">Öffentliche RC-App-Identität</div>
+  </main>
+</body>
+</html>
