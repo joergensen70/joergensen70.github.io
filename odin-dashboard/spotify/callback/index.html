@@ -70,8 +70,12 @@
   <script>
     (() => {
       const packageName = "de.joergensen.odindashboard";
+      // GitHub Pages canonicalizes this directory URL with a trailing slash,
+      // while Spotify and the installed Android app use the registered URI
+      // without it. Keep the OAuth query intact but target that exact app link.
+      const callbackPath = "/odin-dashboard/spotify/callback";
       const target =
-        `intent://${window.location.host}${window.location.pathname}${window.location.search}` +
+        `intent://${window.location.host}${callbackPath}${window.location.search}` +
         `#Intent;scheme=https;package=${packageName};` +
         "action=android.intent.action.VIEW;" +
         "category=android.intent.category.BROWSABLE;end";
