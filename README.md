@@ -6,6 +6,7 @@ Public application identity for private Android applications.
 
 - Client ID: `https://joergensen70.github.io/odin-dashboard/`
 - Redirect URI: `https://joergensen70.github.io/odin-dashboard/oauth/callback`
+- Spotify redirect URI: `https://joergensen70.github.io/odin-dashboard/spotify/callback`
 - Android package: `de.joergensen.odindashboard`
 - Digital Asset Links: `/.well-known/assetlinks.json`
 
@@ -17,9 +18,10 @@ The isolated release-candidate identity is:
 
 The site is static and contains no Home Assistant instance URL, credential,
 authorization code, analytics, cookies or external asset dependency.
-The OAuth callback page forwards its current URL directly to the Android
-package selected by the callback path and provides a manual app-open button for
-browsers that suppress automatic Android App Link handoff.
+The Home Assistant and Spotify callback pages forward their current URL
+directly to the Android package selected by the callback path and provide a
+manual app-open button for browsers that suppress automatic Android App Link
+handoff.
 
 The Digital Asset Links file currently contains the local debug certificate
 and the direct release/upload certificate. Add the Google Play App Signing
