@@ -10,6 +10,15 @@ Public application identity for private Android applications.
 - Android package: `de.joergensen.odindashboard`
 - Digital Asset Links: `/.well-known/assetlinks.json`
 
+Alarm App Links retain the exact journal identity. The rear live destination is
+`/odin-dashboard/open/security/alarm/<alarm_id>/live/rear`; existing
+`/odin-dashboard/open/<surface>/alarm/<alarm_id>` destinations remain supported.
+The static `404.html` entry validates the closed grammar and offers an explicit
+button for the canonical app when a browser receives the link. It does not
+automatically launch another app, contact Home Assistant, or acquire media.
+Invalid paths retain the unavailable page. No credentials or instance URLs are
+included. Local checks: `node --test tests/alarm-link.test.mjs`.
+
 The isolated release-candidate identity is:
 
 - Client ID: `https://joergensen70.github.io/odin-dashboard/rc/`
